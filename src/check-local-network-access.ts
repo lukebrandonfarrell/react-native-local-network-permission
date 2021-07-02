@@ -8,7 +8,7 @@ const DEFAULT_TIMEOUT_WAITING_FOR_LOCAL_NETWORK_CHECKING = 1;
  * when the permission wasn't granted, the false result will return soon
  * but when the permission was granted, we only can wait for some seconds and assume it is positive result
  */
-export const checkLocalNetworkAccess = (timeoutSeconds?: number) => {
+export const checkLocalNetworkAccess = (timeoutSeconds?: number) : Promise<boolean> => {
   if (Platform.OS === 'ios') {
     return RNLocalNetworkPermission.check(
       timeoutSeconds ?? DEFAULT_TIMEOUT_WAITING_FOR_LOCAL_NETWORK_CHECKING,
@@ -16,16 +16,4 @@ export const checkLocalNetworkAccess = (timeoutSeconds?: number) => {
   }
 
   return Promise.resolve(true);
-};
-
-/**
- * following function also will trigger the local network permission dialog if it never show up
- */
-export const requestLocalNetworkAccess = () => {
-  return checkLocalNetworkAccess()
-    .then(() => Promise.resolve())
-    .catch((error:Error) => {
-      // eslint-disable-next-line no-console
-      console.warn(`requestLocalNetworkAccess ${JSON.stringify(error)}`);
-    });
 };
