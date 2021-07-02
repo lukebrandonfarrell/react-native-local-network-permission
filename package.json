@@ -15,7 +15,8 @@
     "postinstall": "husky install"
   },
   "files": [
-    "lib/**/*"
+    "lib/**/*",
+    "ios/**/*"
   ],
   "keywords": [
     "react-native",
