@@ -1,4 +1,3 @@
-
 # React Native Local Network Permission
 
 A temporary lib to handle the local network permission after iOS 14
@@ -9,8 +8,9 @@ A temporary lib to handle the local network permission after iOS 14
 `$ yarn add react-native-local-network-permission`
 
 ## Usage
+
 ```javascript
-import {checkLocalNetworkAccess,requestLocalNetworkAccess} from 'react-native-local-network-permission';
+import { checkLocalNetworkAccess, requestLocalNetworkAccess } from 'react-native-local-network-permission';
 
 //you need to make sure the local network permission dialog popup once
 const result = await requestLocalNetworkAccess();
@@ -19,7 +19,3 @@ const result = await requestLocalNetworkAccess();
 const result = await checkLocalNetworkAccess();
 //here run the code depends local network access
 ```
-
-## License
-
-This project is licensed under the MIT License
