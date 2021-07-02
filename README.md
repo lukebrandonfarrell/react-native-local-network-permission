@@ -5,6 +5,7 @@ A temporary lib to handle the local network permission after iOS 14
 ## Getting started
 
 `$ npm install react-native-local-network-permission`
+
 `$ yarn add react-native-local-network-permission`
 
 ## Usage
